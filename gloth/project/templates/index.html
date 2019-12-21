@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block content %}
+<header style="background:#ffffff; color:#2c3e50;">
+    <div class="container" id="maincontent" tabindex="-1">
+        <p class="welcome">Bonjour {{name}}!</p>
+        <div class="row">
+            {% include 'diagnostic.html' %}
+        </div>
+    </div>
+</header>
+{% endblock%}
