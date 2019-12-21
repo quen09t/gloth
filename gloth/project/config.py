@@ -6,6 +6,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config(object):
     SECRET_KEY = "]7kML!yBh%D]$\g"
     TIMEZONE = timezone('Europe/Paris')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     POSTGRES = {
     'user': 'gloth',
