@@ -34,7 +34,7 @@ Project Organization
     │   ├── Dockerfile                <-- generates the containers
     │   ├── entrypoint.sh             <-- generates the containers
     │   ├── project
-    │   │   ├── __init__.py
+    │   │   ├── __init__.py           <-- makes src a Python module, init the website
     │   │   ├── config.py             <-- configuration file for the website
     │   │   ├── forms.py              <-- forms used by the site (text inputs, buttons etc.)
     │   │   ├── models.py             <-- classes that describe the database tables for the ORM
