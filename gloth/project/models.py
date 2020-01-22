@@ -119,7 +119,7 @@ class User(db.Model):
     modify_count_pathology = db.Column(db.Integer, nullable=False, default=0)
     phone = db.Column(db.String(20), nullable=False, unique=True)
     zip_code = db.Column(db.String(20), nullable=False)
-    # roles = db.relationship('Role', secondary='user_roles')
+    roles = db.relationship('Role', secondary='user_roles')
 
     def __init__(self, name, forename, rpps, email, password, confirmed=True, confirmed_on = None, entry_count_patient=0, entry_count_pathology=0, modify_count_patient=0, modify_count_pathology=0, phone=0, zip_code=0) :
         self.rpps = rpps
@@ -138,3 +138,49 @@ class User(db.Model):
 
     def __repr__(self):
         return "<User(forename=%s, name=%s, rpps=%d, email=%s)>" %(self.forename, self.name, self.rpps,self.email)
+
+class Patient(db.Model):
+    __tablename__ = "patient"
+    __bind_key__ = "patient"
+    id = db.Column(db.Integer, primary_key=True)
+    age = db.Column(db.Integer, nullable=True)
+    sex = db.Column(db.String(), nullable=True)
+    weight = db.Column(db.Integer, nullable=True)
+    height = db.Column(db.Integer, nullable=True)
+    symptoms = db.Column(db.String(), nullable=True)
+    bmi = db.Column(db.Float, nullable=True)
+    tests = db.Column(db.String(), nullable=True)
+    rec_tests = db.Column(db.PickleType, nullable=True)
+    user_id = db.Column(db.Integer, nullable=False)
+    created_on = db.Column(db.DateTime, server_default=db.func.now(tz=app.config['TIMEZONE']))
+    pathology_id = db.Column(db.Integer, nullable=False)
+    pathology_name = db.Column(db.String(), nullable=False)
+    updated_on =  db.Column(db.DateTime, server_default=db.func.now(tz=app.config['TIMEZONE']))
+    updated_by =  db.Column(db.Integer,nullable=True)
+    icd_10 = db.Column(db.String(), nullable=True)
+
+    def __init__(self, user_id,  pathology_id, age=None, sex=None, weight=None,
+                 height=None, tests = None, symptoms = None,
+                 update_on=None, updated_by=None, rec_tests=None, icd_10=None):
+        self.age = age
+        self.sex = sex
+        self.weight = weight
+        self.height = height
+        self.symptoms = symptoms
+        self.tests = tests
+        self.rec_tests = rec_tests
+
+        if height is not None and weight is not None:
+            bmi = round(weight/(0.01*height)**2,1)
+        else:
+            bmi = None
+
+        self.bmi = bmi
+        self.user_id = user_id
+        self.pathology_id = pathology_id
+        self.pathology_name = Pathology.query.get(int(self.pathology_id)).name
+        self.icd_10 = icd_10
+
+    def __repr__(self):
+        return "<Patient(age=%d, sex=%s, pathology=%s)>" %(self.age,
+        self.sex, self.pathology_name)
