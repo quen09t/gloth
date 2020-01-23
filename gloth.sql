@@ -397,6 +397,17 @@ COPY public.pathology_specialty (id, pathology_id, specialty_id) FROM stdin;
 --
 
 COPY public.patient (id, age, sex, weight, height, symptoms, bmi, tests, rec_tests, user_id, created_on, pathology_id, pathology_name, updated_on, updated_by, icd_10) FROM stdin;
+2283	21	sex_M	71	175	inflammation peau, peau inflammee, exema, eczema, demangeaison, prurit, rougeur peau, rougeur congestive peau, erytheme, eruptions, eruptions cutanees, eruption cutanee, boutons, plaques rouges, peau rouge, plaque rouge 	23.2	IMC 23.2None	\\x80209520202020202020205d948c20696d635f94612e	11	2020-01-23 07:41:18	657	eczéma	2020-01-23 07:41:18	\N	\N
+2275	25	sex_F	65	175	douleurs abdominales, douleur abdominale, poussees, remission 	21.2	IMC 21.2None	\\x80209520202020202020205d948c20696d635f94612e	11	2020-01-23 07:27:44	610	maladie de crohn	2020-01-23 07:27:44	\N	\N
+2279	43	sex_M	75	185	periodes perte conscience, periodes conscience alteree, perte conscience, conscience alteree, yeux ouverts 	21.9	IMC 21.9None	\\x80209520202020202020205d948c20696d635f94612e	11	2020-01-23 07:32:56	687	epilepsie	2020-01-23 07:32:56	\N	\N
+2280	25	sex_F	65	175	trouble vue, troubles vue, vision double, perte vision, douleur yeux, mouvement yeux douloureux 	21.2	IMC 21.2None	\\x80209520202020202020205d948c20696d635f94612e	11	2020-01-23 07:34:26	1170	sclérose en plaques	2020-01-23 07:34:26	\N	\N
+2281	25	sex_F	70	170	cystite infectieuse, bacteries intestinales, cystite radique, cystite urine claire, cystite, cystite interstitielle, cystite champignon 	24.2	IMC 24.2None	\\x80209520202020202020205d948c20696d635f6869676894612e	11	2020-01-23 07:35:15	614	cystite	2020-01-23 07:35:15	\N	\N
+2282	45	sex_M	65	180	toux, toux, fievre, fievre, dyspnee, sueur nocturne 	20.1	IMC 20.1None	\\x80209520202020202020205d948c20696d635f94612e	11	2020-01-23 07:39:46	1282	tuberculose	2020-01-23 07:39:46	\N	\N
+2247	80	sex_M	75	180	mal poitrine, douleur poitrine, douleur thoracique, douleur thoracique aigue 	23.1	IMC 23.1None	\\x80209520202020202020205d948c20696d635f94612e	7	2020-01-21 09:09:53	811	infarctus du myocarde	2020-01-21 09:09:53	\N	\N
+2272	45	sex_M	76	178	douleur, cephalee, douleur soudaine, douleur intense, douleur pulsatile douleur articulation, crises, articulations froides, transformation lacide urique liquide cristaux dacide urique, enflure, rougeur region atteinte, grande sensation froid 	24	IMC 24.0None	\\x80209520202020202020205d948c20696d635f94612e	2	2020-01-22 21:51:55	729	goutte	2020-01-22 21:51:55	\N	\N
+2274	55	sex_M	75	180	insuffisance cardiaque, ic 	23.1	IMC 23.1None	\\x80209520202020202020205d948c20696d635f94612e	11	2020-01-23 07:25:59	819	insuffisance cardiaque gauche	2020-01-23 07:25:59	\N	\N
+2277	62	sex_M	80	178	hyperglycemie, obesite, obese 	25.2	IMC 25.2None	\\x80209520202020202020205d948c20696d635f6869676894612e	11	2020-01-23 07:30:07	629	diabète de type 2	2020-01-23 07:30:07	\N	\N
+2278	31	sex_F	67	175	bronchoconstriction, dyspnee 	21.9	IMC 21.9None	\\x80209520202020202020205d948c20696d635f94612e	11	2020-01-23 07:31:28	493	asthme chronique	2020-01-23 07:31:28	\N	\N
 \.
 
 
